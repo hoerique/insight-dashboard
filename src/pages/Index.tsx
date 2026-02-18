@@ -6,6 +6,8 @@ import KpiCard from "@/components/KpiCard";
 import CityTable from "@/components/CityTable";
 import VotesChart from "@/components/VotesChart";
 import ElectorateChart from "@/components/ElectorateChart";
+import GrowthChart from "@/components/GrowthChart";
+import PerformanceCards from "@/components/PerformanceCards";
 import { Users, Vote, Target, TrendingUp } from "lucide-react";
 
 const ELEITOR_FILTERS = [
@@ -96,6 +98,12 @@ const Index = () => {
           </div>
           <ElectorateChart data={filtered} />
         </div>
+
+        {/* Performance Cards */}
+        <PerformanceCards data={filtered} />
+
+        {/* Growth Chart */}
+        <GrowthChart data={filtered} />
 
         {/* Filters + Table */}
         <div className="space-y-4">
