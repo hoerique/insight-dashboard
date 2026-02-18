@@ -1,0 +1,91 @@
+export interface CityData {
+  id: number;
+  cidade: string;
+  eleitores: number;
+  votos2018: number | null;
+  votos2022: number | null;
+  metaMax: number | null;
+  metaMed: number | null;
+  metaMin: number | null;
+  lideranca: number | null;
+}
+
+export const electionData: CityData[] = [
+  { id: 1, cidade: "Seropédica", eleitores: 61453, votos2018: 2912, votos2022: 3319, metaMax: 4000, metaMed: null, metaMin: null, lideranca: 3500 },
+  { id: 2, cidade: "Nova Iguaçu", eleitores: 615983, votos2018: 2350, votos2022: 2905, metaMax: 3500, metaMed: null, metaMin: null, lideranca: 3000 },
+  { id: 3, cidade: "Rio de Janeiro", eleitores: 4993544, votos2018: 1558, votos2022: 1462, metaMax: 2000, metaMed: null, metaMin: null, lideranca: 1600 },
+  { id: 4, cidade: "Japeri", eleitores: 77218, votos2018: 4461, votos2022: 1055, metaMax: 1200, metaMed: null, metaMin: null, lideranca: 1150 },
+  { id: 5, cidade: "Belford Roxo", eleitores: 346121, votos2018: 227, votos2022: 618, metaMax: 1500, metaMed: null, metaMin: null, lideranca: 900 },
+  { id: 6, cidade: "Mangaratiba", eleitores: 46681, votos2018: 339, votos2022: 464, metaMax: null, metaMed: 900, metaMin: null, lideranca: 700 },
+  { id: 7, cidade: "São João de Meriti", eleitores: 371976, votos2018: 309, votos2022: 289, metaMax: null, metaMed: 600, metaMin: null, lideranca: 400 },
+  { id: 8, cidade: "Angra dos Reis", eleitores: 136954, votos2018: 201, votos2022: 280, metaMax: 3000, metaMed: null, metaMin: null, lideranca: 1500 },
+  { id: 9, cidade: "São Gonçalo", eleitores: 663081, votos2018: 660, votos2022: 276, metaMax: null, metaMed: 600, metaMin: null, lideranca: 400 },
+  { id: 10, cidade: "Itaguaí", eleitores: 100335, votos2018: 128, votos2022: 217, metaMax: null, metaMed: 500, metaMin: null, lideranca: 400 },
+  { id: 11, cidade: "Duque de Caxias", eleitores: 672630, votos2018: 194, votos2022: 151, metaMax: null, metaMed: 400, metaMin: null, lideranca: 350 },
+  { id: 12, cidade: "Queimados", eleitores: 102045, votos2018: 349, votos2022: 112, metaMax: null, metaMed: 300, metaMin: null, lideranca: 250 },
+  { id: 13, cidade: "Mesquita", eleitores: 137602, votos2018: 90, votos2022: 106, metaMax: null, metaMed: 300, metaMin: null, lideranca: 200 },
+  { id: 14, cidade: "Paracambi", eleitores: 34265, votos2018: 202, votos2022: 104, metaMax: null, metaMed: 300, metaMin: null, lideranca: 200 },
+  { id: 15, cidade: "Niterói", eleitores: 408707, votos2018: 96, votos2022: 87, metaMax: null, metaMed: 160, metaMin: null, lideranca: 120 },
+  { id: 16, cidade: "Campos dos Goytacazes", eleitores: 372470, votos2018: 28, votos2022: 55, metaMax: null, metaMed: 110, metaMin: null, lideranca: 80 },
+  { id: 17, cidade: "Piraí", eleitores: 23971, votos2018: 38, votos2022: 53, metaMax: null, metaMed: 110, metaMin: null, lideranca: 70 },
+  { id: 18, cidade: "Nilópolis", eleitores: 131385, votos2018: 63, votos2022: 47, metaMax: null, metaMed: 90, metaMin: null, lideranca: 70 },
+  { id: 19, cidade: "Nova Friburgo", eleitores: 155847, votos2018: 3, votos2022: 44, metaMax: null, metaMed: 90, metaMin: null, lideranca: 70 },
+  { id: 20, cidade: "Eng. Paulo de Frontin", eleitores: 11610, votos2018: 73, votos2022: 41, metaMax: null, metaMed: 90, metaMin: null, lideranca: 65 },
+  { id: 21, cidade: "Petrópolis", eleitores: 244288, votos2018: 121, votos2022: 28, metaMax: null, metaMed: 70, metaMin: null, lideranca: 60 },
+  { id: 22, cidade: "Itaboraí", eleitores: 175112, votos2018: 61, votos2022: 27, metaMax: null, metaMed: 70, metaMin: null, lideranca: 60 },
+  { id: 23, cidade: "Rio das Ostras", eleitores: 101554, votos2018: 21, votos2022: 23, metaMax: null, metaMed: 60, metaMin: null, lideranca: 40 },
+  { id: 24, cidade: "Paraíba do Sul", eleitores: 34840, votos2018: 1, votos2022: 23, metaMax: null, metaMed: 60, metaMin: 40, lideranca: 30 },
+  { id: 25, cidade: "Magé", eleitores: 201272, votos2018: 36, votos2022: 22, metaMax: null, metaMed: 60, metaMin: 40, lideranca: 30 },
+  { id: 26, cidade: "Maricá", eleitores: 172765, votos2018: 8, votos2022: 17, metaMax: null, metaMed: 50, metaMin: 30, lideranca: 20 },
+  { id: 27, cidade: "Itaperuna", eleitores: 76588, votos2018: 1, votos2022: 14, metaMax: null, metaMed: 50, metaMin: 30, lideranca: 20 },
+  { id: 28, cidade: "Volta Redonda", eleitores: 225002, votos2018: 27, votos2022: 13, metaMax: null, metaMed: 100, metaMin: 80, lideranca: 40 },
+  { id: 29, cidade: "Vassouras", eleitores: 31169, votos2018: 27, votos2022: 12, metaMax: null, metaMed: 50, metaMin: 30, lideranca: 20 },
+  { id: 30, cidade: "Cabo Frio", eleitores: 172562, votos2018: 13, votos2022: 12, metaMax: null, metaMed: 30, metaMin: 20, lideranca: 15 },
+  { id: 31, cidade: "Mendes", eleitores: 15827, votos2018: 385, votos2022: 9, metaMax: null, metaMed: 30, metaMin: 20, lideranca: 15 },
+  { id: 32, cidade: "Miguel Pereira", eleitores: 24872, votos2018: 43, votos2022: 9, metaMax: null, metaMed: 30, metaMin: 20, lideranca: 15 },
+  { id: 33, cidade: "Saquarema", eleitores: 86816, votos2018: 10, votos2022: 9, metaMax: null, metaMed: 25, metaMin: 20, lideranca: 15 },
+  { id: 34, cidade: "Teresópolis", eleitores: 132737, votos2018: 29, votos2022: 9, metaMax: null, metaMed: 25, metaMin: 20, lideranca: 15 },
+  { id: 35, cidade: "São Fidélis", eleitores: 32119, votos2018: 1, votos2022: 7, metaMax: null, metaMed: 20, metaMin: 20, lideranca: 15 },
+  { id: 36, cidade: "Paraty", eleitores: 35354, votos2018: 33, votos2022: 7, metaMax: null, metaMed: 150, metaMin: 100, lideranca: 80 },
+  { id: 37, cidade: "Miracema", eleitores: 22779, votos2018: null, votos2022: 7, metaMax: null, metaMed: 20, metaMin: 15, lideranca: 10 },
+  { id: 38, cidade: "Barra do Piraí", eleitores: 70534, votos2018: 17, votos2022: 6, metaMax: null, metaMed: 15, metaMin: 10, lideranca: 8 },
+  { id: 39, cidade: "Cachoeiras de Macacu", eleitores: 47466, votos2018: 3, votos2022: 5, metaMax: null, metaMed: 15, metaMin: 10, lideranca: 8 },
+  { id: 40, cidade: "Rio Claro", eleitores: 15925, votos2018: 1, votos2022: 5, metaMax: null, metaMed: 15, metaMin: 10, lideranca: 8 },
+  { id: 41, cidade: "São Pedro da Aldeia", eleitores: 73547, votos2018: 2, votos2022: 4, metaMax: null, metaMed: 10, metaMin: 8, lideranca: 6 },
+  { id: 42, cidade: "Três Rios", eleitores: 63484, votos2018: 1, votos2022: 4, metaMax: null, metaMed: 10, metaMin: 8, lideranca: 6 },
+  { id: 43, cidade: "Macaé", eleitores: 182349, votos2018: 11, votos2022: 4, metaMax: null, metaMed: 10, metaMin: 8, lideranca: 6 },
+  { id: 44, cidade: "Quatis", eleitores: 11067, votos2018: null, votos2022: 3, metaMax: null, metaMed: 10, metaMin: 8, lideranca: 6 },
+  { id: 45, cidade: "Arraial do Cabo", eleitores: 36414, votos2018: 12, votos2022: 3, metaMax: null, metaMed: 10, metaMin: 8, lideranca: 6 },
+  { id: 46, cidade: "Araruama", eleitores: 107789, votos2018: 10, votos2022: 2, metaMax: null, metaMed: 10, metaMin: 6, lideranca: 4 },
+  { id: 47, cidade: "Barra Mansa", eleitores: 135378, votos2018: 18, votos2022: 2, metaMax: null, metaMed: 10, metaMin: 6, lideranca: 4 },
+  { id: 48, cidade: "Pinheiral", eleitores: 18987, votos2018: null, votos2022: 2, metaMax: 10, metaMed: null, metaMin: 6, lideranca: 4 },
+  { id: 49, cidade: "Itaocara", eleitores: 19910, votos2018: null, votos2022: 2, metaMax: 10, metaMed: null, metaMin: 6, lideranca: 4 },
+  { id: 50, cidade: "Quissamã", eleitores: 20047, votos2018: null, votos2022: 1, metaMax: 10, metaMed: null, metaMin: 6, lideranca: 4 },
+  { id: 51, cidade: "Casimiro de Abreu", eleitores: 36184, votos2018: 6, votos2022: 1, metaMax: 5, metaMed: 4, metaMin: 3, lideranca: null },
+  { id: 52, cidade: "Porto Real", eleitores: 18788, votos2018: 11, votos2022: 1, metaMax: 5, metaMed: null, metaMin: 4, lideranca: 3 },
+  { id: 53, cidade: "Cambuci", eleitores: 12443, votos2018: null, votos2022: 1, metaMax: 5, metaMed: 4, metaMin: 3, lideranca: null },
+  { id: 54, cidade: "Tanguá", eleitores: 26801, votos2018: 1, votos2022: 1, metaMax: 5, metaMed: 4, metaMin: null, lideranca: 3 },
+  { id: 55, cidade: "Bom Jardim", eleitores: 22760, votos2018: 64, votos2022: 1, metaMax: 5, metaMed: 4, metaMin: null, lideranca: 3 },
+  { id: 56, cidade: "Italva", eleitores: 12086, votos2018: 2, votos2022: 1, metaMax: 5, metaMed: null, metaMin: 4, lideranca: 3 },
+  { id: 57, cidade: "Paty do Alferes", eleitores: 24376, votos2018: 13, votos2022: 1, metaMax: 5, metaMed: 4, metaMin: 3, lideranca: null },
+  { id: 58, cidade: "Valença", eleitores: 57779, votos2018: 7, votos2022: 1, metaMax: 5, metaMed: null, metaMin: 4, lideranca: 3 },
+  { id: 59, cidade: "São Sebastião do Alto", eleitores: 8095, votos2018: null, votos2022: 1, metaMax: 5, metaMed: null, metaMin: 4, lideranca: 3 },
+  { id: 60, cidade: "Resende", eleitores: 98763, votos2018: 5, votos2022: 1, metaMax: 5, metaMed: null, metaMin: 4, lideranca: 3 },
+  { id: 61, cidade: "Duas Barras", eleitores: 8535, votos2018: 11, votos2022: null, metaMax: 11, metaMed: 5, metaMin: 3, lideranca: null },
+  { id: 62, cidade: "Levy Gasparian", eleitores: 7037, votos2018: 6, votos2022: null, metaMax: null, metaMed: 5, metaMin: 4, lideranca: 3 },
+  { id: 63, cidade: "São José do Vale do Rio Preto", eleitores: 16809, votos2018: 4, votos2022: null, metaMax: null, metaMed: 5, metaMin: 4, lideranca: 3 },
+  { id: 64, cidade: "Silva Jardim", eleitores: 17840, votos2018: 3, votos2022: null, metaMax: null, metaMed: 5, metaMin: 4, lideranca: 3 },
+  { id: 65, cidade: "Guapimirim", eleitores: 39218, votos2018: 2, votos2022: null, metaMax: null, metaMed: 5, metaMin: 4, lideranca: 3 },
+  { id: 66, cidade: "Porciúncula", eleitores: 13826, votos2018: 2, votos2022: null, metaMax: null, metaMed: 5, metaMin: 4, lideranca: 3 },
+  { id: 67, cidade: "Búzios", eleitores: 25288, votos2018: 1, votos2022: null, metaMax: null, metaMed: 5, metaMin: 4, lideranca: 3 },
+  { id: 68, cidade: "Santa Maria Madalena", eleitores: 8972, votos2018: 1, votos2022: null, metaMax: null, metaMed: 5, metaMin: 4, lideranca: 3 },
+  { id: 69, cidade: "Sapucaia", eleitores: 14487, votos2018: 1, votos2022: null, metaMax: null, metaMed: 5, metaMin: 4, lideranca: 3 },
+];
+
+export const totals = {
+  votos2018: 15313,
+  votos2022: 11986,
+  alvo2026: 20856,
+  media2026: 15815,
+  minimo2026: 14097,
+};
