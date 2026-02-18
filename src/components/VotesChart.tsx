@@ -3,9 +3,12 @@ import { CityData } from "@/data/electionData";
 
 interface VotesChartProps {
   data: CityData[];
+  activeYears: Set<string>;
 }
 
-const VotesChart = ({ data }: VotesChartProps) => {
+const DEFAULT_YEARS = new Set(["2018", "2022", "2026"]);
+
+const VotesChart = ({ data, activeYears = DEFAULT_YEARS }: VotesChartProps) => {
   const chartData = data.slice(0, 15).map((city) => ({
     name: city.cidade.length > 12 ? city.cidade.slice(0, 12) + "…" : city.cidade,
     "Votos 2018": city.votos2018 ?? 0,
@@ -39,9 +42,15 @@ const VotesChart = ({ data }: VotesChartProps) => {
             }}
           />
           <Legend wrapperStyle={{ fontSize: 12, paddingTop: 12 }} />
-          <Bar dataKey="Votos 2018" fill="hsl(210 70% 45%)" radius={[3, 3, 0, 0]} />
-          <Bar dataKey="Votos 2022" fill="hsl(160 60% 45%)" radius={[3, 3, 0, 0]} />
-          <Bar dataKey="Meta 2026" fill="hsl(45 93% 58%)" radius={[3, 3, 0, 0]} />
+          {activeYears.has("2018") && (
+            <Bar dataKey="Votos 2018" fill="hsl(210 70% 45%)" radius={[3, 3, 0, 0]} />
+          )}
+          {activeYears.has("2022") && (
+            <Bar dataKey="Votos 2022" fill="hsl(160 60% 45%)" radius={[3, 3, 0, 0]} />
+          )}
+          {activeYears.has("2026") && (
+            <Bar dataKey="Meta 2026" fill="hsl(45 93% 58%)" radius={[3, 3, 0, 0]} />
+          )}
         </BarChart>
       </ResponsiveContainer>
     </div>

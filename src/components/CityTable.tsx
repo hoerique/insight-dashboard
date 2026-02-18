@@ -10,11 +10,18 @@ import {
 
 interface CityTableProps {
   data: CityData[];
+  activeYears: Set<string>;
 }
 
 const fmt = (v: number | null) => (v != null ? v.toLocaleString("pt-BR") : "—");
 
-const CityTable = ({ data }: CityTableProps) => {
+const DEFAULT_YEARS = new Set(["2018", "2022", "2026"]);
+
+const CityTable = ({ data, activeYears = DEFAULT_YEARS }: CityTableProps) => {
+  const show2018 = activeYears.has("2018");
+  const show2022 = activeYears.has("2022");
+  const show2026 = activeYears.has("2026");
+
   return (
     <div className="rounded-lg border border-border bg-card overflow-hidden">
       <div className="overflow-x-auto max-h-[500px] overflow-y-auto">
@@ -24,12 +31,19 @@ const CityTable = ({ data }: CityTableProps) => {
               <TableHead className="text-xs font-semibold uppercase tracking-wider text-muted-foreground w-8">#</TableHead>
               <TableHead className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Cidade</TableHead>
               <TableHead className="text-xs font-semibold uppercase tracking-wider text-muted-foreground text-right">Eleitores</TableHead>
-              <TableHead className="text-xs font-semibold uppercase tracking-wider text-muted-foreground text-right">2018</TableHead>
-              <TableHead className="text-xs font-semibold uppercase tracking-wider text-muted-foreground text-right">2022</TableHead>
-              <TableHead className="text-xs font-semibold uppercase tracking-wider text-primary text-right">Meta Max</TableHead>
-              <TableHead className="text-xs font-semibold uppercase tracking-wider text-primary text-right">Meta Méd</TableHead>
-              <TableHead className="text-xs font-semibold uppercase tracking-wider text-primary text-right">Meta Mín</TableHead>
-              <TableHead className="text-xs font-semibold uppercase tracking-wider text-accent text-right">Liderança</TableHead>
+              {show2018 && (
+                <TableHead className="text-xs font-semibold uppercase tracking-wider text-muted-foreground text-right">2018</TableHead>
+              )}
+              {show2022 && (
+                <TableHead className="text-xs font-semibold uppercase tracking-wider text-muted-foreground text-right">2022</TableHead>
+              )}
+              {show2026 && (
+                <>
+                  <TableHead className="text-xs font-semibold uppercase tracking-wider text-primary text-right">Meta Max</TableHead>
+                  <TableHead className="text-xs font-semibold uppercase tracking-wider text-primary text-right">Meta Méd</TableHead>
+                  <TableHead className="text-xs font-semibold uppercase tracking-wider text-primary text-right">Meta Mín</TableHead>
+                </>
+              )}
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -42,12 +56,19 @@ const CityTable = ({ data }: CityTableProps) => {
                 <TableCell className="text-muted-foreground text-xs">{city.id}</TableCell>
                 <TableCell className="font-medium text-sm">{city.cidade}</TableCell>
                 <TableCell className="text-right text-sm tabular-nums">{city.eleitores.toLocaleString("pt-BR")}</TableCell>
-                <TableCell className="text-right text-sm tabular-nums">{fmt(city.votos2018)}</TableCell>
-                <TableCell className="text-right text-sm tabular-nums">{fmt(city.votos2022)}</TableCell>
-                <TableCell className="text-right text-sm tabular-nums text-primary font-medium">{fmt(city.metaMax)}</TableCell>
-                <TableCell className="text-right text-sm tabular-nums text-primary font-medium">{fmt(city.metaMed)}</TableCell>
-                <TableCell className="text-right text-sm tabular-nums text-primary font-medium">{fmt(city.metaMin)}</TableCell>
-                <TableCell className="text-right text-sm tabular-nums text-accent font-semibold">{fmt(city.lideranca)}</TableCell>
+                {show2018 && (
+                  <TableCell className="text-right text-sm tabular-nums">{fmt(city.votos2018)}</TableCell>
+                )}
+                {show2022 && (
+                  <TableCell className="text-right text-sm tabular-nums">{fmt(city.votos2022)}</TableCell>
+                )}
+                {show2026 && (
+                  <>
+                    <TableCell className="text-right text-sm tabular-nums text-primary font-medium">{fmt(city.metaMax)}</TableCell>
+                    <TableCell className="text-right text-sm tabular-nums text-primary font-medium">{fmt(city.metaMed)}</TableCell>
+                    <TableCell className="text-right text-sm tabular-nums text-primary font-medium">{fmt(city.metaMin)}</TableCell>
+                  </>
+                )}
               </TableRow>
             ))}
           </TableBody>
