@@ -11,6 +11,7 @@ const COLORS = [
   "hsl(160 60% 45%)",
   "hsl(340 65% 55%)",
   "hsl(270 60% 55%)",
+  "hsl(25 95% 50%)",
 ];
 
 const ElectorateChart = ({ data }: ElectorateChartProps) => {
